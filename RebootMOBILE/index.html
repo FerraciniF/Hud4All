@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Hud4All:Reboot</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./reboot.css" />
+    <link rel="icon" href="./src/LogoZoio.png">
+    <style>
+        html {
+    height: 100%;
+}
+body {
+    background-color: black;
+    overflow:hidden;
+    height: 100%;
+}
+
+/* .imgback = back ground img (gif)*/
+.imgback {
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.imgback img {
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    object-fit:contain;
+}
+
+.containerss {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+}
+@media screen and (max-width: 1190px){
+    .containerss {
+        flex-direction: column-reverse;
+    }
+    .container2 {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+    
+
+.container1 {
+    display: flex;
+    flex-direction:row;
+    margin-left: 0px;
+    position: relative;
+    margin-top: 1vh;
+    height: 50px;
+    right: 0px;
+    align-items: center;
+}
+
+.container2 {
+    display: flex;
+    flex-direction:row;
+    margin-left: 0px;
+    position: relative;
+    margin-top: 1vh;
+    width: 35%;
+    height: 50px;
+    right: 0px;
+    border-radius: 5px;
+    align-items: center;
+    background-color: rgb(192, 192, 192);
+    padding-inline: 10px;
+}
+
+
+.casinhas {
+    box-sizing: border-box;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(192, 192, 192);
+}
+
+.casinhas .casinhas-title:hover {
+    background-color: rgb(221, 221, 221);
+}
+.casinhas:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.casinhas:last-child {
+    border-radius: 0px 5px 5px 0px;
+
+}
+.casinhas:last-child:hover {
+    border-radius: 0px 5px 0px 0px;
+
+}
+
+.casinhas:nth-child(7):hover + .casinhas{
+    border-radius: 0px 5px 0px 0px;
+}
+
+.casinhas-title {
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: 0%;
+    align-items: center;
+    height: 50px;
+    padding-inline: 16px;
+    cursor: pointer;
+}
+
+.casinhas-content {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    top: 100%;
+    width: max-content;
+    min-width: 121px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.casinhas-content a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+.casinhas-content a:hover {
+    background-color: rgb(221, 221, 221);
+    
+}
+.casinhas-content a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.casinhas:hover > .casinhas-content{
+    display: flex;
+}
+
+.casinhas:nth-child(7):hover > .casinhas-content{
+    border-radius: 0px 5px 5px 5px;
+}
+.casinhas:nth-child(8):hover > .casinhas-content{
+    border-radius: 0px 5px 5px 5px;
+}
+.formSearchBox {
+    padding-left: 10px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.inpoutSeachBOX {
+    border-radius: 5px;
+    background-color: rgba(rgba(255, 255, 255, 0), green, blue, alpha);
+    outline: 0;
+    border: 0;
+    height: 60%;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Remove o X de limpar texto da tag input*/
+.inpoutSeachBOX::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.inpoutSeachBOX::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.buttonGPT {
+    height: 90%;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+    flex-shrink: 0;
+}
+
+/* Serve para mudar a cor do texto dentro do botão*/
+.buttonGPT:visited {
+    color: black;
+}
+    </style>
+  </head>
+<body>
+    <div class="containerss">
+        <div class="container1">
+            <div class="casinhas">
+                <div class="casinhas-title">
+                    <a>Assistir</a>
+                </div>
+                <div class="casinhas-content">
+                    <a href="https://open.spotify.com" target="_blanck">Spotfy Web Player</a>
+                    <a href="https://www.youtube.com/" target="_blanck">YouTube</a>
+                    <a href="https://betteranime.net/" target="_blanck">Better Anime</a>
+                    <a href="https://yayanimes.net/" target="_blanck">Yay Animes</a>
+                    <a href="https://anihub.tv/" target="_blanck">Anihub</a>
+                    <a href="https://www.animestc.net/" target="_blanck">AnimesTC</a>
+                    <a href="https://www.netflix.com/browse" target="_blanck">NetFlix</a>
+                    <a href="https://www.twitch.tv/" target="_blanck">Twitch</a>
+                    <a href="https://xilften.me" target="_blanck">Xilften</a>
+                    <a href="https://booyah.live/" target="_blanck">Booyah</a>
+                    <a href="https://mangalivre.net#" target="_blanck">MangaLivre</a>
+                    <a href="https://mangayabu.top/tag/settings/" target="_blanck">MangaYabu</a>
+                </div> 
+            </div>
+            <div class="casinhas">
+               <div class="casinhas-title">
+                    <a>Escola</a>
+                </div>
+                <div class="casinhas-content">
+                    <a href="https://aluno.funlec.online/home" target="_blanck">Funlec Online</a>
+                    <a href="https://www.office.com/?auth=1" target="_blanck">Office</a>
+                    <a href="https://aluno.funlec.online/home" target="_blanck">Portal do Aluno</a>
+                    <a href="https://app.rocketseat.com.br/discover" target="_blanck">Rocketseat</a>
+                </div>
+            </div>
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>Redes Sociais</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="https://discord.com/channels/@me" target="_blanck">Discord</a>
+                    <a href="https://steamcommunity.com/chat/" target="_blanck">Chat da Steam</a>
+                    <a href="https://www.instagram.com/" target="_blanck">Instagran</a>
+                    <a href="https://twitter.com/home?lang=pt" target="_blanck">Twitter</a>
+                    <a href="https://web.whatsapp.com/" target="_blanck">Whatsapp</a>
+                 </div>
+             </div>
+
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>Imagem e Video</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="https://pixlr.com/br/" target="_blanck">Pixrl Editor de fotos</a>
+                    <a href="https://giphy.com/" target="_blanck">Giphy</a>
+                    <a href="https://wall.alphacoders.com/by_resolution.php?w=2560&h=1440&lang=Portuguese"target="_blanck">WallPaper</a>
+                    <a href="https://getemoji.com/" target="_blanck">Get Emoji</a>
+                    <a href="https://pixlr.com/br/remove-background/" target="_blanck">Pixlr Remove Background</a>
+                    <a href="https://photos.google.com/" target="_blanck">Google Fotos</a>
+                    <a href="https://ezgif.com/" target="_blanck">Ez GIF</a>
+                 </div>
+            </div>
+
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>Games</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="https://gamersclub.com.br/" target="_blanck">Gamers Club</a>
+                    <a href="https://www.faceit.com/pt/home" target="_blanck">FACEIT</a>
+                    <a href="https://aternos.org/servers/" target="_blanck">Aternos</a>
+                    <a href="https://server.pro/create" target="_blanck">Sever.PRO</a>
+                    <a href="https://beta.leetify.com/app" target="_blanck">Leetify</a>
+                    <a href="https://csgostats.gg/player/76561198176522442#/" target="_blanck">CSGO.STATS</a>
+                    <a href="https://www.roblox.com/home" target="_blanck">Roblox</a>
+                 </div>
+            </div>
+
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>FrontEND</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="https://www.w3schools.com/html/default.asp" target="_blanck">W3 Schools</a>
+                    <a href="https://pt.stackoverflow.com/" target="_blanck">Stack Overflow</a>
+                 </div>
+            </div>
+
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>Outros</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="chrome-extension://fiedbfgcleddlbcmgdigjgdfcggjcion/management/management.html"target="_blanck">MicrosoftAuthenticator</a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blanck">Google Gmail</a>
+                    <a href="https://www.virustotal.com/gui/" target="_blanck">Virus Total</a>
+                    <a href="https://loritta.website/br/" target="_blanck">Loritta</a>
+                    <a href="https://socialclub.rockstargames.com/settings" target="_blanck">Rockstar Games</a>
+                    <a href="https://mega.nz/fm/94VEHJaQ" target="_blanck">MEGA</a>
+                    <a href="http://megatorrentshd.net" target="_blanck">megatorrentshd</a>
+                    <a href="http://192.168.15.2/Wireless_Basic.asp" target="_blanck">Roteador</a>
+                    <a href="https://docs.fivem.net/natives/" target="_blanck">Fivem Docs</a>
+                    <a href="https://myanimelist.net/animelist/FerraciniF_?status=7" target="_blanck">MyAnimeList</a>
+                    <a href="https://www.twitch.tv/fpinguim" target="_blanck">MinhaTWITCH</a>
+                 </div>
+            </div>
+
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>Lojas</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="https://www.kabum.com.br/" target="_blanck">Kabum</a>
+                    <a href="https://www.terabyteshop.com.br/?gclid=CjwKCAiA-f78BRBbEiwATKRRBG5pbhkB0j24baovcKsWypebUIgc1vqww8TvFJw1d7vUHEpoRQtLWxoCOFEQAvD_BwE"
+                        target="_blanck">Terabyte</a>
+                    <a href="https://www.pichau.com.br/" target="_blanck">Pichau</a>
+                    <a href="https://store.steampowered.com/?l=portuguese" target="_blanck">Steam</a>
+                    <a href="https://www.epicgames.com/store/pt-BR/free-games" target="_blanck">Epic Games</a>
+                    <a href="https://pt.aliexpress.com/" target="_blanck">Aliexpress</a>
+                 </div>
+            </div>
+            
+            <!-- 
+            <div class="casinhas">
+                <div class="casinhas-title">
+                     <a>NAMME</a>
+                 </div>
+                 <div class="casinhas-content">
+                    <a href="LINK" target="_blanck">NAME_LINK<a/>
+                 </div>
+            </div> 
+            -->
+        </div>
+        <div class="container2">
+                <a href="https://chat.openai.com/" target="_blank" class="buttonGPT">
+                Chat GPT
+                </a>
+                <form action="https://www.google.com.br/search" method="get" target="_blank" class="formSearchBox">
+                    <input type="search" name="q" placeholder="Lorem Ipsum" class="inpoutSeachBOX" id="teste">
+                </form>
+        </div>
+    </div>
+   
+
+    <div class="imgback">
+        <img src="./src/video.gif">
+    </div>
+</body>
+</html>
