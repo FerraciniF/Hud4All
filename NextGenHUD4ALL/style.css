@@ -1,0 +1,68 @@
+body {
+    background-color: gray;
+}
+
+.NoteList {
+    background-color:blanchedalmond;
+    height: 400px;
+    width: 320px;
+    padding: 5px;
+}
+
+.dataBlock {
+    background-color: green;
+    cursor: initial;
+}
+
+.bottonpanel {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border:none;
+}
+.bottonpanel:hover {
+    background-color:dimgrey;
+    border: 2px black solid;
+    border-radius: 20%;
+}
+.imgToglePannel {
+    height: 40px;
+    width: 35px;
+    display: flex;
+    flex-direction: row;
+}
+.deleteButton {
+    display: none;
+    background-color: white;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+
+#textNewLI {
+    background-color: white;
+    display: inline;
+    border: 5px black;
+    margin: 5px;
+}
+
+#textNewUL {
+    background-color: white;
+    display: inline;
+    border: 5px black;
+    margin: 5px;
+}
+
+#panel {
+    display: none;
+    margin-top: 1px;
+    background-color:transparent;
+}
+
+#OptionNewUL {
+    display: inline;
+    background-color: white;
+}

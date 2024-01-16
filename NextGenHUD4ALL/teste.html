@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Novas Informações-->
+    <div class="NoteList" id="DATas">
+        <!--Manejador (Painel Editor)-->
+        <button onclick="togglePanelAndDelteBottons()" class="bottonpanel"><img src="./imgs/ferramenta-de-reparacao.png" class="imgToglePannel"></button>
+        <div id="panel">
+            <input type="text" placeholder="Adicionar Elemental" id="textNewUL" onkeydown="verificarTeclaEnterToUL(event)">
+            <select id="OptionNewUL"></select>
+            <input type="text" placeholder="Adicionar elemento" id="textNewLI" onkeydown="verificarTeclaEnterToLI(event)">
+            </select>
+        </div>
+        <div>
+        <ul>Ul de teste
+            <li>Li de teste</li>
+        </ul>
+        <ul>Ul de teste
+            <li>Li de teste</li>
+        </ul>
+        <ul>Ul de teste
+            <li>Li de teste</li>
+        </ul>
+        </div>
+    </div>
+</body>
+<script src="/testre/script.js"></script>
+</html>
