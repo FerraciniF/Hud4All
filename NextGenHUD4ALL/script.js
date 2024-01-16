@@ -13,6 +13,8 @@ function AddOption() {
         //Atribuir um ID a nova Option
         novaOption.value = novaOptionText.replace(/\s+/g, '_');
 
+        novaOption.className = 'UloptionSelector'
+
         // Atribuir um nome para a nova Option
         novaOption.text = novaOptionText;
 
@@ -34,11 +36,11 @@ function obterIdOpcaoSelecionada() {
         // Obter o valor (que é o ID) da opção selecionada
         const idOpcaoSelecionada = opcaoSelecionada.value;
         return idOpcaoSelecionada;
-    } else {
-        return null; // Ou qualquer outro valor padrão, dependendo do seu caso
+    } 
+    else {
+        return null;
     }
 }
-
 
 // Função para adicionar nova UL
 function addUL() {
@@ -53,8 +55,9 @@ function addUL() {
         // Atribuir o ID com base no texto do input
         novoItemUl.id = novaUlText.replace(/\s+/g, '_');
 
+
         // Definir o texto do novo item
-        novoItemUl.textContent = novaUlText; // Corrigir aqui
+        novoItemUl.textContent = novaUlText; 
 
         // Criar um botão de exclusão
         const botaoExcluir = document.createElement('span');
@@ -97,7 +100,6 @@ function verificarTeclaEnterToUL(event) {
     }
 }
 
-
 // Função para adicionar um novo item à lista
 function adicionarItem() {
     // Constante com o texto que será o texto do novo item:
@@ -107,7 +109,7 @@ function adicionarItem() {
         // Obter o ID da opção selecionada
         const idSelecionado = obterIdOpcaoSelecionada();
 
-        // Verificar se há uma opção selecionada
+        // Verificar se há uma opção selecionada e se tiver cria o Item LI
         if (idSelecionado) {
             // Criar um novo elemento li
             const novoItemLi = document.createElement('li');
@@ -131,6 +133,7 @@ function adicionarItem() {
 
             // Limpar o input após adicionar o item
             document.getElementById('textNewLI').value = '';
+            
         } else {
             console.log('Nenhuma opção selecionada para adicionar o item.');
         }
@@ -147,11 +150,11 @@ function verificarTeclaEnterToLI(event) {
         adicionarItem();
     }
 }
+
 //Função que é chamada pelo botão de excluir, ela exclui o Item da LI.
 function excluirItem(item) {
     item.remove();
 }
-
 function toggleBottonDelete() {
     var btdel = document.getElementsByClassName("deleteButton");
 

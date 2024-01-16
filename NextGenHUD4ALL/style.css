@@ -66,3 +66,9 @@ body {
     display: inline;
     background-color: white;
 }
+
+.UloptionSelector {
+    appearance: none;
+    background-color: green;
+    text-decoration: white;
+}
