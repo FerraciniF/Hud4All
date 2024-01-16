@@ -7,7 +7,7 @@ a vontade a me chamar aqui pelo github ou pelo discord: ferracinif
 
 
 Tentavida de uma Change Log?:
-- A versão 5.0 não é dinâmica para usuarios e exige a modificação dos itens por meio do código html, o qual não foi comentado e não há instruçõesHAHAH, então não á razão para se aventurar tentando usar meu site por enquanto.
+- A versão 5.0 não é dinâmica para usuarios e exige a modificação dos itens por meio do código html, o qual não foi comentado e não há instruçõesHAHAH, então não há razão para se aventurar tentando usar meu site por enquanto.
   Por isso, a versão Next Gen Hud4All esta sendo desenvolvida, utilizando Java Script estou desenvolvendo um mecanismo dinâmico que permita adicionar elementos a todos os parâmetros do site.
   Também para a versão Next Gen estou listando a seguir oque vira:
     - Game Launcher
