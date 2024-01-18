@@ -15,11 +15,9 @@
     display: block;
     background-color: darkgrey;
     color: black;
-    margin-top: 25px;
+    margin: 25px 10px 0px 10px;
     word-wrap:break-word;
     padding: 5px 20px 5px 20px;
-    width: 80%;
-
 }
 .read-MeBOX {
     padding: 5px;
@@ -45,8 +43,11 @@ li {
 }
 .GifFuncionamento {
     display: flex;
-    align-items:center;
     position: relative;
-    left: 5px;
-    height: 30vh;
+}
+
+@media screen and (max-width: 500px ){
+    .GifFuncionamento {
+
+    }
 }
