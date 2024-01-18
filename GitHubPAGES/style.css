@@ -1,0 +1,52 @@
+.NAVBAR {
+    position:static;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: gray;
+    height: 100px;
+    width: 60%;
+    margin-top: 1%;
+    z-index: 2;
+}
+.Content {
+    position: relative;
+    display: block;
+    background-color: darkgrey;
+    color: black;
+    margin-top: 25px;
+    word-wrap:break-word;
+    padding: 5px 20px 5px 20px;
+    width: 80%;
+
+}
+.read-MeBOX {
+    padding: 5px;
+    height: min-content;
+    width: min-content;
+    background-color: white;
+    color: black;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+ul {
+    padding-left: 0px;
+}
+li {
+    padding-left: 0px;
+}
+.GifFuncionamento {
+    display: flex;
+    align-items:center;
+    position: relative;
+    left: 5px;
+    height: 300px;
+}
