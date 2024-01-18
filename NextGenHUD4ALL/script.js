@@ -1,28 +1,4 @@
-//Painel edição UL/Li a baixo:
-//Toggle do painel editor
-//Option a ser clicada no painel Editor
-function AddOption() {
-    const novaOptionText = document.getElementById('textNewUL').value;
-    const novaOptionID = novaOptionText.replace(/\s+/g, '_');
-    // Verificar se o texto não é nulo ou uma string vazia
-    if (novaOptionText && novaOptionText.trim() !== '') {
-
-        // Criar uma nova Option
-        const novaOption = document.createElement('option');
-        
-        //Atribuir um ID a nova Option
-        novaOption.value = novaOptionText.replace(/\s+/g, '_');
-
-        novaOption.className = 'UloptionSelector'
-
-        // Atribuir um nome para a nova Option
-        novaOption.text = novaOptionText;
-
-    // Adicionar o novo item à lista de Options
-    document.getElementById('OptionNewUL').appendChild(novaOption);
-    }
-}
-
+carregarOptions()
 // Função para obter o ID da opção selecionada
 function obterIdOpcaoSelecionada() {
     // Supondo que você tenha um elemento select com ID 'OptionNewUL'
@@ -42,52 +18,6 @@ function obterIdOpcaoSelecionada() {
     }
 }
 
-// Função para adicionar nova UL
-function addUL() {
-    // Constante com o texto que será o texto da nova UL:
-    const novaUlText = document.getElementById('textNewUL').value;
-    const novaUlID = novaUlText.replace(/\s+/g, '_');
-    // Verificar se o texto não é nulo ou uma string vazia
-    if (novaUlText && novaUlText.trim() !== '') {
-        // Criar um novo elemento ul
-        const novoItemUl = document.createElement('ul');
-
-        // Atribuir o ID com base no texto do input
-        novoItemUl.id = novaUlText.replace(/\s+/g, '_');
-
-
-        // Definir o texto do novo item
-        novoItemUl.textContent = novaUlText; 
-
-        // Criar um botão de exclusão
-        const botaoExcluir = document.createElement('span');
-        botaoExcluir.className = 'deleteButton';
-        botaoExcluir.textContent = '🗑️';
-        botaoExcluir.onclick = function() {
-            excluirItem(novoItemUl);
-            
-            // Verificar e excluir a option com o mesmo texto
-            const selectElement = document.getElementById('OptionNewUL');
-            for (let i = 0; i < selectElement.options.length; i++) {
-                const option = selectElement.options[i];
-                if (option.text === novaUlText) {
-                    selectElement.remove(i);
-                    break; // Como encontramos a option, podemos sair do loop
-                }
-            }
-        };
-
-        // Adicionar o botão de exclusão ao lado do novo item
-        novoItemUl.appendChild(botaoExcluir);
-
-        // Adicionar o novo item à lista
-        document.getElementById('DATas').appendChild(novoItemUl);
-
-        // Limpar o input após adicionar o item
-        document.getElementById('textNewUL').value = '';
-    }
-}
-
 // Função para verificar se a tecla pressionada é Enter (chamar a funçõa a cima)
 function verificarTeclaEnterToUL(event) {
     if (event.key === 'Enter') {
@@ -95,48 +25,7 @@ function verificarTeclaEnterToUL(event) {
         event.preventDefault();
         
         // Chamar a função adicionarItem() quando Enter for pressionado
-        AddOption();
-        addUL();
-    }
-}
-
-// Função para adicionar um novo item à lista
-function adicionarItem() {
-    // Constante com o texto que será o texto do novo item:
-    const novoItemTexto = document.getElementById('textNewLI').value;
-    // Verificar se o texto não é nulo ou uma string vazia
-    if (novoItemTexto && novoItemTexto.trim() !== '') {
-        // Obter o ID da opção selecionada
-        const idSelecionado = obterIdOpcaoSelecionada();
-
-        // Verificar se há uma opção selecionada e se tiver cria o Item LI
-        if (idSelecionado) {
-            // Criar um novo elemento li
-            const novoItemLi = document.createElement('li');
-
-            // Definir o texto do novo item
-            novoItemLi.textContent = novoItemTexto;
-
-            // Criar um botão de exclusão
-            const botaoExcluir = document.createElement('span');
-            botaoExcluir.className = 'deleteButton';
-            botaoExcluir.textContent = '🗑️';
-            botaoExcluir.onclick = function() {
-                excluirItem(novoItemLi);
-            };
-
-            // Adicionar o botão de exclusão ao lado do novo item
-            novoItemLi.appendChild(botaoExcluir);
-
-            // Adicionar o novo item à lista
-            document.getElementById(idSelecionado).appendChild(novoItemLi);
-
-            // Limpar o input após adicionar o item
-            document.getElementById('textNewLI').value = '';
-            
-        } else {
-            console.log('Nenhuma opção selecionada para adicionar o item.');
-        }
+        inserirNovoElemento();
     }
 }
 
@@ -169,7 +58,6 @@ function toggleBottonDelete() {
     }
 }
 
-
 function togglePanel() {
     var panel = document.getElementById("panel");
     panel.style.display = (panel.style.display === "none") ? "block" : "none";
@@ -178,4 +66,151 @@ function togglePanel() {
 function togglePanelAndDelteBottons() {
     togglePanel();
     toggleBottonDelete();
+}
+
+function inserirNovoElemento() {
+    // Constante com o texto que será o texto da nova UL:
+    const nome = document.getElementById('textNewElement').value;
+    const nomeID = nome.replace(/\s+/g, '_');
+    // Verificar se o texto não é nulo ou uma string vazia
+    if (nome && nome.trim() !== '') {
+        const opcaoSelecionadaID = obterIdOpcaoSelecionada();
+        console.log(opcaoSelecionadaID)
+        if (opcaoSelecionadaID) {
+            adicionarLi(nome,nomeID, opcaoSelecionadaID);
+        }
+        else {
+            adicionarUl(nome,nomeID);
+            const optionID = nomeID + "_option"
+            adicionarOption(nome,nomeID,optionID);
+        }
+        // Limpar o input após adicionar o item
+        document.getElementById('textNewElement').value = '';
+    }
+}
+function adicionarLi(nome, nomeID, opcaoSelecionada) {
+    // Criar um novo elemento li
+    const novoItemLi = document.createElement('li');
+
+    // Definir o texto do novo item
+    novoItemLi.textContent = nome;
+
+    //Add ID
+    novoItemLi.id = nomeID;
+
+    novoItemLi.className = 'NewLi';
+    // Criar um botão de exclusão
+    const botaoExcluir = document.createElement('span');
+    botaoExcluir.className = 'deleteButton';
+    botaoExcluir.textContent = '🗑️';
+    botaoExcluir.onclick = function() {
+        excluirItem(novoItemLi);
+    };
+
+    // Adicionar o botão de exclusão ao lado do novo item
+    novoItemLi.appendChild(botaoExcluir);
+
+    // Adicionar o novo item à lista
+    document.getElementById(opcaoSelecionada).appendChild(novoItemLi);
+    toggleBottonDelete()
+}
+function adicionarUl(nome, nomeID) {
+    // Criar um novo elemento ul
+    const novoItemUl = document.createElement('ul');
+
+    // Atribuir o ID com base no texto do input
+    novoItemUl.id = nomeID;
+
+    // Definir o texto do novo item
+    novoItemUl.textContent = nome; 
+
+    novoItemUl.className = 'NewUL'
+    // Criar um botão de exclusão
+    const botaoExcluir = document.createElement('span');
+    botaoExcluir.className = 'deleteButton';
+    botaoExcluir.textContent = '🗑️';
+    botaoExcluir.onclick = function() {
+        excluirItem(novoItemUl);
+        excluirOption(nome)
+    };
+
+    // Adicionar o botão de exclusão ao lado do novo item
+    novoItemUl.appendChild(botaoExcluir);
+
+    // Adicionar o novo item à lista
+    document.getElementById('DATas').appendChild(novoItemUl);
+
+    toggleBottonDelete()
+    
+}
+
+function adicionarOption(nome,nameID,optionID){
+    // Criar uma nova Option
+    const novaOption = document.createElement('option');
+    
+    //Atribuir um ID a nova Option
+    novaOption.id = optionID;
+
+    novaOption.value = nameID;
+
+    novaOption.className = 'UloptionSelector'
+
+    // Atribuir um nome para a nova Option
+    novaOption.text = nome;
+
+    // Adicionar o novo item à lista de Options
+    document.getElementById('OptionNewUL').appendChild(novaOption);
+}
+
+function excluirOption(nome) {
+
+    // Verificar e excluir a option com o mesmo texto
+    const selectElement = document.getElementById('OptionNewUL');
+    for (let i = 0; i < selectElement.options.length; i++) {
+        const option = selectElement.options[i];
+        if (option.text === nome) {
+            selectElement.remove(i);
+            break; // Como encontramos a option, podemos sair do loop
+        }
+    }
+}
+
+function salvarUl() {
+    const ULSdatas = document.getElementsByClassName('NewUL')
+    //const chieldsDats = selectElement.childNodes;
+    //const ULSdatas = Array.from(selectElement).map(ul => ul.id);
+    var salvarUls = []
+    Array.from(ULSdatas).forEach(ul => {
+        //localStorage.setItem('ul', JSON.stringify(ul));
+        const LIs = ul.getElementsByClassName('NewLi')
+        var salvarLIs = []
+        Array.from(LIs).forEach(li => {
+            salvarLIs.push(li.textContent)
+        })
+        console.log(ul)
+        var obj = {
+            nome: ul.textContent,
+            lis: salvarLIs
+        }
+        salvarUls.push(obj)
+    })
+    localStorage.setItem('ul', JSON.stringify(salvarUls));
+    console.log(salvarUls)
+}
+
+function carregarOptions() {
+    const selectElement = document.getElementById('OptionNewUL');
+    const savedUls = JSON.parse(localStorage.getItem('ul')) || [];
+    
+    savedUls.forEach(ul => {
+        const nomeID = ul.nome.replace(/\s+/g, '_');
+        adicionarUl(ul.nome, nomeID)
+        const optionID = nomeID + "_option"
+        adicionarOption(ul.nome,nomeID,optionID);
+        ul.lis.forEach(li => {
+            console.log(li);
+            const nomeLiID = li.replace(/\s+/g, '_');
+            adicionarLi(li, nomeLiID, nomeID)
+        })
+    });
 }
