@@ -1,33 +1,6 @@
-.NAVBAR {
-    position:static;
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    background-color: gray;
-    height: 100px;
-    width: 60%;
-    margin-top: 1%;
-    z-index: 2;
-}
-.Content {
-    position: relative;
-    display: block;
-    background-color: darkgrey;
-    color: black;
-    margin: 25px 10px 0px 10px;
-    word-wrap:break-word;
-    padding: 5px 20px 5px 20px;
-}
-.read-MeBOX {
-    padding: 5px;
-    height: min-content;
-    width: min-content;
-    background-color: white;
-    color: black;
-}
 body {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items:center;
     justify-content: center;
@@ -35,19 +8,72 @@ body {
     color: white;
     font-family: 'Lato', sans-serif;
 }
-ul {
-    padding-left: 0px;
+.NAVBAR {
+    display:flex;
+    position: relative;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: gray;
+    width: 40%;
+    margin-top: 1%;
+    z-index: 2;
 }
-li {
-    padding-left: 0px;
+.ByWHO {
+    position: relative;
+    align-self: end;
+    color: black;
+    font-size: 60%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(255, 255, 255, 0.548);
+    padding: 0px 2px;
+    bottom: 0px;
+    right: 0px;
+}
+.Content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: darkgrey;
+    color: black;
+    margin: 25px 10px 0px 10px;
+    word-wrap:break-word;
+    padding: 0px 20px 5px 20px;
+    width: 70%;
+}
+@media screen and (max-width: 600px ){
+    .Content {
+        width: 90%;
+        margin: 25px 0px;
+    }
+}
+.read-MeBOX {
+    padding: 5px;
+    height: max-content;
+    width: max-content;
+    background-color: white;
+    color: black;
 }
 .GifFuncionamento {
-    display: flex;
-    position: relative;
+    width: auto;
+    height: auto;
 }
-
-@media screen and (max-width: 500px ){
-    .GifFuncionamento {
-
-    }
+.GifFuncionamento img {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+.textContent {
+    padding-left: 0px;
+    margin: 10px 0px 10px;
+}
+.textContent ul {
+    padding-left: 0px;
+    margin-top: 0px;
+}
+.textContent li {
+    padding: 0px;
+    margin-left:20px;
 }
