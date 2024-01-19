@@ -95,6 +95,10 @@ body {
     src: url(./src/CyberwayRiders-lg97d.ttf) format("truetype");
 }
 h1 { font-family: "Kimberley", sans-serif }
+@font-face {
+    font-family: "CyberPunk2";
+    src: url(./src/GlitchGoblin-2O87v.ttf) format("truetype");
+}
 .AcessRepostitory {
     background-color: rgb(206, 205, 205);
     color: black;
@@ -104,17 +108,12 @@ h1 { font-family: "Kimberley", sans-serif }
     position: relative;
     flex-direction: row;
     width: max-content;
-    height: 5vh;
+    height: 3vh;
+    padding: 0p 5vh;
     align-items: center;
     text-align: center;
     text-decoration: none;
 }
-.AcessRepostitory img {
-    display: flex;
-    position: relative;
-    height: min-content;
-    object-fit: contain;
-    max-width: 2vh;
-    height: auto;
-    padding-right: 3px;
+.AcessRepostitory b {
+    padding: 0px 0.5vh;
 }
