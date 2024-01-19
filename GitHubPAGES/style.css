@@ -77,3 +77,8 @@ body {
     padding: 0px;
     margin-left:20px;
 }
+@font-face {
+    font-family: "CyberPunk";
+    src: url(./src/CyberwayRiders-lg97d.ttf) format("truetype");
+}
+h1 { font-family: "Kimberley", sans-serif }

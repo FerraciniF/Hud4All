@@ -87,6 +87,7 @@ function inserirNovoElemento() {
         // Limpar o input após adicionar o item
         document.getElementById('textNewElement').value = '';
     }
+    salvarUl()
 }
 function adicionarLi(nome, nomeID, opcaoSelecionada) {
     // Criar um novo elemento li
@@ -105,6 +106,7 @@ function adicionarLi(nome, nomeID, opcaoSelecionada) {
     botaoExcluir.textContent = '🗑️';
     botaoExcluir.onclick = function() {
         excluirItem(novoItemLi);
+        salvarUl();
     };
 
     // Adicionar o botão de exclusão ao lado do novo item
@@ -113,6 +115,7 @@ function adicionarLi(nome, nomeID, opcaoSelecionada) {
     // Adicionar o novo item à lista
     document.getElementById(opcaoSelecionada).appendChild(novoItemLi);
     toggleBottonDelete()
+    
 }
 function adicionarUl(nome, nomeID) {
     // Criar um novo elemento ul
@@ -132,6 +135,7 @@ function adicionarUl(nome, nomeID) {
     botaoExcluir.onclick = function() {
         excluirItem(novoItemUl);
         excluirOption(nome)
+        salvarUl();
     };
 
     // Adicionar o botão de exclusão ao lado do novo item
@@ -141,7 +145,6 @@ function adicionarUl(nome, nomeID) {
     document.getElementById('DATas').appendChild(novoItemUl);
 
     toggleBottonDelete()
-    
 }
 
 function adicionarOption(nome,nameID,optionID){
@@ -197,7 +200,9 @@ function salvarUl() {
     localStorage.setItem('ul', JSON.stringify(salvarUls));
     console.log(salvarUls)
 }
-
+function apagarUl(salvarUls) {
+    localStorage.remove('ul', JSON.stringify(salvarUls));
+}
 function carregarOptions() {
     const selectElement = document.getElementById('OptionNewUL');
     const savedUls = JSON.parse(localStorage.getItem('ul')) || [];
