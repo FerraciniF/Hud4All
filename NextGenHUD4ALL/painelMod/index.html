@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Mod</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="PainelMod" id="PainelMod">
+        <div>
+            <a>Selecione sua imagem favorita <br>
+            Lembre-se de apenas usar arquivos .PNG / .JPG / .GIF</a>
+            <input type="file" id="fileInput" onchange="handleFileSelect()">
+        </div>
+
+        <label for="colorSelector">Selecione uma cor RGB:</label>
+        <input type="color" id="colorSelector" onchange="changeBackgroundColor()" value="#ff0000">
+    </div>
+
+    <button onclick="togglePanelModificador()" class="bottonpanel">
+        <img src="../imgs/ferramenta-de-reparacao.png" class="imgToglePannel" alt="Toggle Panel"/>
+    </button>
+
+    <div class="imgback" id="IMGbackground"></div>
+    <script src="./script.js"></script>
+</body>
+</html>

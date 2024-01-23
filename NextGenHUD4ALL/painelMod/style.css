@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+.PainelMod {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    padding: 1vh;
+    bottom: 1vh;
+    right: 8vh;
+    z-index: 5;
+    height: 50vh;
+    width: 40vh;
+    background-color: gray;
+    border: 2px black solid;
+    border-radius: 2%;
+}
+.bottonpanel {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border:none;
+    border: 2px black solid;
+    border-radius: 20%;
+    cursor: pointer;
+}
+.bottonpanel:hover {
+    background-color:rgb(75, 75, 75);
+    border: 2px black solid;
+    border-radius: 20%;
+}
+.imgToglePannel {
+    height: 40px;
+    width: 35px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgback {
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+    background-repeat: no-repeat;
+}
+.imgback img {
+    position: relative;
+    height: min-content;
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
