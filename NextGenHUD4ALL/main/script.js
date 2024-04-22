@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (savedImagePath) {
         const imgElement = document.createElement('img');
         imgElement.src = savedImagePath;
-        document.getElementById('IMGbackground').appendChild(imgEçlement);
+        document.getElementById('IMGbackground').appendChild(imgElement);
     }
 
     const bodyBackgroundCOlor = localStorage.getItem('bodyBackColor');
