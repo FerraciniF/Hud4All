@@ -261,3 +261,20 @@ body {
 .buttonGPT:visited {
     color: black;
 }
+
+
+/*classes temporarias */
+.temp {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.temporario {
+    background-color: rgb(192, 192, 192);
+    height: min-content;
+    width: min-content;
+    padding: 1vh;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+}

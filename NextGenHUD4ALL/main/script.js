@@ -114,3 +114,11 @@ function changeBackgroundColor() {
     localStorage.setItem('bodyBackColor', selectedColor)
     document.body.style.backgroundColor = selectedColor;
 }
+
+//Script TEMPORARIO
+function abrirPaginas() {
+    window.open("https://ingresso.ufms.br/processo/sisu/", "_blank");
+    window.open("https://ingresso.ufms.br/processo/vestibular/", "_blank");
+    window.open("https://ingresso.ufms.br/processo/passe/", "_blank");
+    window.open("https://ingresso.ufms.br/processo/qsu/"), "_blank";
+}
